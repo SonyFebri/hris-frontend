@@ -1,6 +1,6 @@
     'use client'
 
-    // import DashboardLayout from '@/app/components/ui'
+    // import DashboardLayout from '@/app/components/layout'
     import React, { useState } from 'react'
     import {
     PieChart,
