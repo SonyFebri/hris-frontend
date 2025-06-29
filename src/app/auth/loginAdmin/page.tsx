@@ -6,6 +6,7 @@ import Link from "next/link";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { useRouter } from "next/navigation"; 
 import { loginAdmin } from "@/app/services/auth";
+import { getUser } from "@/app/services/auth";
 
 export default function SignInPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -26,7 +27,8 @@ export default function SignInPage() {
     try {
       const result = await loginAdmin(email, password);
       console.log("Login berhasil:", result); // result = nilai yg dikembalikan
-
+      // const user = await getUser();
+      // console.log("Data user:", user);
       // Redirect ke dashboard
       router.push("/admin/dashboard");
     } catch (error: any) {
