@@ -3,6 +3,8 @@ import api from '@/lib/axios';
 export async function loginAdmin(email, password) {
   await api.get('/sanctum/csrf-cookie');
   return api.post('/auth/login-admin', { email, password });
+  const token = response.data.access_token;
+  localStorage.setItem('token', token);
 }
 export async function loginEmployee(email, password) {
   await api.get('/sanctum/csrf-cookie');
